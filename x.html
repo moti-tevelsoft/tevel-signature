@@ -1,4 +1,10 @@
 
+<div style="font-family: Arial, sans-serif; padding: 16px 20px; margin-bottom: 24px; border-bottom: 1px solid #e0e0e0; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+  <h1 style="font-size: 16px; font-weight: bold; color: #2b2b2b; margin: 0;">Email Signature</h1>
+  <button id="copy-signature-btn" type="button" style="font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; color: #ffffff; background-color: #1F8D42; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer;">Copy to clipboard</button>
+</div>
+
+<div id="signature">
 <table dir="rtl" cellpadding="0" cellspacing="0" border="0" style="font-family: Arial; font-size: 13px; color: #333333; border-collapse: collapse;">
   <tr>
     <td style="padding: 2px 0; vertical-align: middle;">
@@ -46,3 +52,25 @@
     </td>
   </tr>
 </table>
+</div>
+
+<script>
+  document.getElementById('copy-signature-btn').addEventListener('click', async function () {
+    const html = document.getElementById('signature').innerHTML;
+    const text = document.getElementById('signature').innerText;
+    const btn = this;
+    const original = btn.textContent;
+    try {
+      await navigator.clipboard.write([
+        new ClipboardItem({
+          'text/html': new Blob([html], { type: 'text/html' }),
+          'text/plain': new Blob([text], { type: 'text/plain' })
+        })
+      ]);
+      btn.textContent = 'Copied!';
+    } catch (err) {
+      btn.textContent = 'Copy failed';
+    }
+    setTimeout(function () { btn.textContent = original; }, 2000);
+  });
+</script>
