@@ -168,6 +168,13 @@
       .signature-card { padding: 18px 18px; }
       .instructions-card { padding: 18px 18px; }
     }
+    .app-version {
+      text-align: center;
+      font-size: 11px;
+      color: #8a93a0;
+      margin: 16px 0 4px;
+      letter-spacing: 0.04em;
+    }
   </style>
 </head>
 <body style="margin: 0;">
@@ -220,7 +227,7 @@
             <span style="font-family: Arial; font-size: 14px; color: #1F8D42;">✆</span>
           </td>
           <td valign="middle" style="padding: 2px 0; line-height: 1.4; mso-line-height-rule: exactly;">
-            <a id="sig-mobile" href="tel:0501234567" style="font-family: Arial; font-size: 12px; color: #333333; text-decoration: none;">050-1234567</a>
+            <a id="sig-mobile" href="tel:0501234567" style="font-family: Arial; font-size: 12px; color: #333333; text-decoration: none;"><span id="sig-mobile-text" style="color: #333333; text-decoration: none;">050-1234567</span></a>
           </td>
         </tr>
         <tr>
@@ -228,7 +235,7 @@
             <span style="font-family: Arial; font-size: 14px; color: #1F8D42;">✆</span>
           </td>
           <td valign="middle" style="padding: 2px 0; line-height: 1.4; mso-line-height-rule: exactly;">
-            <a href="tel:036773080" style="font-family: Arial; font-size: 12px; color: #333333; text-decoration: none;">03-6773080</a>
+            <a href="tel:036773080" style="font-family: Arial; font-size: 12px; color: #333333; text-decoration: none;"><span style="color: #333333; text-decoration: none;">03-6773080</span></a>
           </td>
         </tr>
         <tr>
@@ -236,7 +243,7 @@
             <span style="font-family: Arial; font-size: 14px; color: #1F8D42; font-weight: bold;">@</span>
           </td>
           <td valign="middle" style="padding: 2px 0; line-height: 1.4; mso-line-height-rule: exactly;">
-            <a id="sig-email" href="mailto:myemail@tevelsoft.co.il" style="font-family: Arial; font-size: 13px; color: #1F8D42; text-decoration: none;">myemail@tevelsoft.co.il</a>
+            <a id="sig-email" href="mailto:myemail@tevelsoft.co.il" style="font-family: Arial; font-size: 13px; color: #1F8D42; text-decoration: none;"><span id="sig-email-text" style="color: #1F8D42; text-decoration: none;">myemail@tevelsoft.co.il</span></a>
           </td>
         </tr>
         <tr>
@@ -244,7 +251,7 @@
             <span style="font-family: Arial; font-size: 14px; color: #1F8D42;">⌘</span>
           </td>
           <td valign="middle" style="padding: 2px 0; line-height: 1.4; mso-line-height-rule: exactly;">
-            <a href="https://www.tevelsoft.co.il" style="font-family: Arial; font-size: 13px; color: #1F8D42; text-decoration: none;">www.tevelsoft.co.il</a>
+            <a href="https://www.tevelsoft.co.il" style="font-family: Arial; font-size: 13px; color: #1F8D42; text-decoration: none;"><span style="color: #1F8D42; text-decoration: none;">www.tevelsoft.co.il</span></a>
           </td>
         </tr>
       </table>
@@ -301,14 +308,18 @@
 
   <p class="instructions-note">טיפ: אם ההדבקה משטיחה את העיצוב, בדוק שאתה מדביק בעורך עשיר (Rich text / HTML) ולא במצב טקסט בלבד.</p>
 </div>
+
+<p class="app-version">v1.0.0</p>
 </div>
 
 <script>
   const sigName = document.getElementById('sig-name');
   const sigPosition = document.getElementById('sig-position');
   const sigMobile = document.getElementById('sig-mobile');
+  const sigMobileText = document.getElementById('sig-mobile-text');
   const sigMobileRow = document.getElementById('sig-mobile-row');
   const sigEmail = document.getElementById('sig-email');
+  const sigEmailText = document.getElementById('sig-email-text');
 
   document.getElementById('field-name').addEventListener('input', function (e) {
     sigName.textContent = e.target.value;
@@ -322,13 +333,13 @@
       sigMobileRow.style.display = 'none';
     } else {
       sigMobileRow.style.display = '';
-      sigMobile.textContent = value;
+      sigMobileText.textContent = value;
       sigMobile.href = 'tel:' + value.replace(/\D/g, '');
     }
   });
   document.getElementById('field-email').addEventListener('input', function (e) {
     const value = e.target.value;
-    sigEmail.textContent = value;
+    sigEmailText.textContent = value;
     sigEmail.href = 'mailto:' + value;
   });
 
