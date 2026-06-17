@@ -3,30 +3,113 @@
 <head>
   <meta charset="utf-8" />
   <title>Email Signature</title>
+  <style>
+    body {
+      background: #f5f7fa;
+      min-height: 100vh;
+      font-family: -apple-system, "Segoe UI", Arial, sans-serif;
+      color: #1f2933;
+    }
+    .form-card {
+      background: #ffffff;
+      border: 1px solid #e4e7ec;
+      border-radius: 10px;
+      padding: 22px 26px;
+      margin: 24px auto;
+      max-width: 680px;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.04);
+    }
+    .form-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #eef0f3;
+    }
+    .form-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: #1f2933;
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+    .copy-btn {
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      color: #ffffff;
+      background-color: #1F8D42;
+      border: none;
+      border-radius: 6px;
+      padding: 9px 18px;
+      cursor: pointer;
+      transition: background-color 0.15s ease, transform 0.05s ease, box-shadow 0.15s ease;
+      box-shadow: 0 1px 2px rgba(31, 141, 66, 0.25);
+    }
+    .copy-btn:hover { background-color: #17743a; }
+    .copy-btn:active { transform: translateY(1px); box-shadow: none; }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 16px;
+    }
+    .form-label {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #5a6573;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .form-input {
+      font-family: inherit;
+      font-size: 14px;
+      color: #1f2933;
+      padding: 9px 12px;
+      border: 1px solid #d4d8de;
+      border-radius: 6px;
+      background: #ffffff;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .form-input:hover { border-color: #b5bcc6; }
+    .form-input:focus {
+      outline: none;
+      border-color: #1F8D42;
+      box-shadow: 0 0 0 3px rgba(31, 141, 66, 0.15);
+    }
+    @media (max-width: 520px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .form-card { margin: 16px; padding: 18px 18px; }
+    }
+  </style>
 </head>
 <body style="margin: 0;">
 
-<div style="font-family: Arial, sans-serif; padding: 16px 20px; margin-bottom: 24px; border-bottom: 1px solid #e0e0e0;">
-  <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px;">
-    <h1 style="font-size: 16px; font-weight: bold; color: #2b2b2b; margin: 0;">Email Signature</h1>
-    <button id="copy-signature-btn" type="button" style="font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; color: #ffffff; background-color: #1F8D42; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer;">Copy to clipboard</button>
+<div class="form-card">
+  <div class="form-header">
+    <h1 class="form-title">Email Signature</h1>
+    <button id="copy-signature-btn" type="button" class="copy-btn">Copy to clipboard</button>
   </div>
-  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px; max-width: 640px;">
-    <label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #666666;">
-      Full 
-      <input id="field-name" type="text" value="מוטי מנדלוביץ'" style="font-family: Arial, sans-serif; font-size: 14px; padding: 6px 8px; border: 1px solid #cccccc; border-radius: 4px;" />
+  <div class="form-grid">
+    <label class="form-label">
+      שם מלא
+      <input id="field-name" type="text" value="שם מלא" class="form-input" />
     </label>
-    <label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #666666;">
-      Position
-      <input id="field-position" type="text" value="CTO" style="font-family: Arial, sans-serif; font-size: 14px; padding: 6px 8px; border: 1px solid #cccccc; border-radius: 4px;" />
+    <label class="form-label">
+      תפקיד
+      <input id="field-position" type="text" value="תפקיד" class="form-input" />
     </label>
-    <label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #666666;">
-      Mobile phone
-      <input id="field-mobile" type="text" value="050-8663298" style="font-family: Arial, sans-serif; font-size: 14px; padding: 6px 8px; border: 1px solid #cccccc; border-radius: 4px;" />
+    <label class="form-label">
+      נייד
+      <input id="field-mobile" type="text" value="050-1234567" dir="ltr" class="form-input" />
     </label>
-    <label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #666666;">
-      Email
-      <input id="field-email" type="text" value="moti@tevelsoft.co.il" style="font-family: Arial, sans-serif; font-size: 14px; padding: 6px 8px; border: 1px solid #cccccc; border-radius: 4px;" />
+    <label class="form-label">
+      דוא"ל
+      <input id="field-email" type="text" value="myemail@tevelsoft.co.il" dir="ltr" class="form-input" />
     </label>
   </div>
 </div>
@@ -46,12 +129,12 @@
                   <img alt="תבל" src="https://tevelsoft.co.il/wp-content/uploads/2026/06/tevel-mail-logo.png" width="100px" height="37px" style="display: block;" />
                 </td>
                 <td valign="middle" style="line-height: 1.2; mso-line-height-rule: exactly;">
-                  <span id="sig-name" style="font-family: Arial; font-size: 18px; font-weight: bold; color: #2b2b2b; line-height: 1.2; mso-line-height-rule: exactly;">מוטי מנדלוביץ'</span>
+                  <span id="sig-name" style="font-family: Arial; font-size: 18px; font-weight: bold; color: #2b2b2b; line-height: 1.2; mso-line-height-rule: exactly;">שם מלא</span>
                 </td>
               </tr>
               <tr>
                 <td valign="middle" style="padding-top: 2px; line-height: 1.2; mso-line-height-rule: exactly;">
-                  <span style="font-family: Arial; font-size: 14px; font-weight: bold; color: #666666; line-height: 1.2; mso-line-height-rule: exactly;">תבל תעשיות תכנה בע"מ | <span id="sig-position">CTO</span></span>
+                  <span style="font-family: Arial; font-size: 14px; font-weight: bold; color: #666666; line-height: 1.2; mso-line-height-rule: exactly;">תבל תעשיות תכנה בע"מ | <span id="sig-position">תפקיד</span></span>
                 </td>
               </tr>
             </table>
@@ -59,10 +142,10 @@
         </tr>
         <tr>
           <td dir="rtl" style="padding-bottom: 2px;">
-            <span style="font-family: Arial; font-size: 14px; color: #333333; line-height: 1.3; mso-line-height-rule: exactly;">
-              <span id="sig-mobile-wrap">נייד: <a id="sig-mobile" href="tel:0508663298" style="font-family: Arial; font-size: 12px; color: #333333; text-decoration: none;">050-8663298</a> | </span>משרד: <a href="tel:036773080" style="font-family: Arial; font-size: 12px; color: #333333; text-decoration: none;">03-6773080</a>
+            <span style="font-family: Arial; font-size: 13px; color: #333333; line-height: 1.3; mso-line-height-rule: exactly;">
+              <span id="sig-mobile-wrap">נייד: <a id="sig-mobile" href="tel:0501234567" style="font-family: Arial; font-size: 13px; color: #333333; text-decoration: none;">050-1234567</a> | </span>משרד: <a href="tel:036773080" style="font-family: Arial; font-size: 13px; color: #333333; text-decoration: none;">03-6773080</a>
               |
-              <a id="sig-email" href="mailto:moti@tevelsoft.co.il" style="font-family: Arial; font-size: 14px; color: #1F8D42; text-decoration: none;">moti@tevelsoft.co.il</a>
+              <a id="sig-email" href="mailto:myemail@tevelsoft.co.il" style="font-family: Arial; font-size: 13px; color: #1F8D42; text-decoration: none;">myemail@tevelsoft.co.il</a>
             </span>
           </td>
         </tr>
