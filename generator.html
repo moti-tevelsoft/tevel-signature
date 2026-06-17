@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+  <meta charset="utf-8" />
+  <title>Email Signature</title>
+</head>
+<body style="margin: 0;">
+
+<div style="font-family: Arial, sans-serif; padding: 16px 20px; margin-bottom: 24px; border-bottom: 1px solid #e0e0e0;">
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px;">
+    <h1 style="font-size: 16px; font-weight: bold; color: #2b2b2b; margin: 0;">Email Signature</h1>
+    <button id="copy-signature-btn" type="button" style="font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; color: #ffffff; background-color: #1F8D42; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer;">Copy to clipboard</button>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px; max-width: 640px;">
+    <label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #666666;">
+      Full 
+      <input id="field-name" type="text" value="מוטי מנדלוביץ'" style="font-family: Arial, sans-serif; font-size: 14px; padding: 6px 8px; border: 1px solid #cccccc; border-radius: 4px;" />
+    </label>
+    <label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #666666;">
+      Position
+      <input id="field-position" type="text" value="CTO" style="font-family: Arial, sans-serif; font-size: 14px; padding: 6px 8px; border: 1px solid #cccccc; border-radius: 4px;" />
+    </label>
+    <label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #666666;">
+      Mobile phone
+      <input id="field-mobile" type="text" value="050-8663298" style="font-family: Arial, sans-serif; font-size: 14px; padding: 6px 8px; border: 1px solid #cccccc; border-radius: 4px;" />
+    </label>
+    <label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #666666;">
+      Email
+      <input id="field-email" type="text" value="moti@tevelsoft.co.il" style="font-family: Arial, sans-serif; font-size: 14px; padding: 6px 8px; border: 1px solid #cccccc; border-radius: 4px;" />
+    </label>
+  </div>
+</div>
+
+<div style="display: flex; justify-content: center; padding: 0 20px;">
+  <div style="border: 1px solid #d0d0d0; border-radius: 6px; padding: 24px 28px; background: #ffffff;">
+    <div id="signature">
+<table dir="rtl" cellpadding="0" cellspacing="0" border="0" style="font-family: Arial; font-size: 13px; color: #333333; border-collapse: collapse;">
+  <tr>
+    <td style="padding: 2px 0; vertical-align: middle;">
+      <table dir="rtl" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
+        <tr>
+          <td align="right" style="padding-bottom: 8px;" valign="middle">
+            <table dir="rtl" align="right" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
+              <tr>
+                <td valign="middle" rowspan="2" style="padding-left: 16px;">
+                  <img alt="תבל" src="https://tevelsoft.co.il/wp-content/uploads/2026/06/tevel-mail-logo.png" width="100px" height="37px" style="display: block;" />
+                </td>
+                <td valign="middle" style="line-height: 1.2; mso-line-height-rule: exactly;">
+                  <span id="sig-name" style="font-family: Arial; font-size: 18px; font-weight: bold; color: #2b2b2b; line-height: 1.2; mso-line-height-rule: exactly;">מוטי מנדלוביץ'</span>
+                </td>
+              </tr>
+              <tr>
+                <td valign="middle" style="padding-top: 2px; line-height: 1.2; mso-line-height-rule: exactly;">
+                  <span style="font-family: Arial; font-size: 14px; font-weight: bold; color: #666666; line-height: 1.2; mso-line-height-rule: exactly;">תבל תעשיות תכנה בע"מ | <span id="sig-position">CTO</span></span>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td dir="rtl" style="padding-bottom: 2px;">
+            <span style="font-family: Arial; font-size: 14px; color: #333333; line-height: 1.3; mso-line-height-rule: exactly;">
+              <span id="sig-mobile-wrap">נייד: <a id="sig-mobile" href="tel:0508663298" style="font-family: Arial; font-size: 12px; color: #333333; text-decoration: none;">050-8663298</a> | </span>משרד: <a href="tel:036773080" style="font-family: Arial; font-size: 12px; color: #333333; text-decoration: none;">03-6773080</a>
+              |
+              <a id="sig-email" href="mailto:moti@tevelsoft.co.il" style="font-family: Arial; font-size: 14px; color: #1F8D42; text-decoration: none;">moti@tevelsoft.co.il</a>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td dir="rtl" style="padding-bottom: 4px; line-height: 1.3; mso-line-height-rule: exactly;">
+            <span style="font-family: Arial; font-size: 12px; color: #333333; line-height: 1.3; mso-line-height-rule: exactly;">
+              <a href="https://www.tevelsoft.co.il" style="font-family: Arial; font-size: 14px; color: #1F8D42; text-decoration: none;">www.tevelsoft.co.il</a>
+              &nbsp;|&nbsp;
+              <a href="https://www.crm.co.il" style="font-family: Arial; font-size: 14px; color: #1F8D42; text-decoration: none;">www.crm.co.il</a>
+            </span>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+    </div>
+  </div>
+</div>
+
+<script>
+  const sigName = document.getElementById('sig-name');
+  const sigPosition = document.getElementById('sig-position');
+  const sigMobile = document.getElementById('sig-mobile');
+  const sigMobileWrap = document.getElementById('sig-mobile-wrap');
+  const sigEmail = document.getElementById('sig-email');
+
+  document.getElementById('field-name').addEventListener('input', function (e) {
+    sigName.textContent = e.target.value;
+  });
+  document.getElementById('field-position').addEventListener('input', function (e) {
+    sigPosition.textContent = e.target.value;
+  });
+  document.getElementById('field-mobile').addEventListener('input', function (e) {
+    const value = e.target.value.trim();
+    if (value === '') {
+      sigMobileWrap.style.display = 'none';
+    } else {
+      sigMobileWrap.style.display = '';
+      sigMobile.textContent = value;
+      sigMobile.href = 'tel:' + value.replace(/\D/g, '');
+    }
+  });
+  document.getElementById('field-email').addEventListener('input', function (e) {
+    const value = e.target.value;
+    sigEmail.textContent = value;
+    sigEmail.href = 'mailto:' + value;
+  });
+
+  document.getElementById('copy-signature-btn').addEventListener('click', async function () {
+    const html = document.getElementById('signature').innerHTML;
+    const text = document.getElementById('signature').innerText;
+    const btn = this;
+    const original = btn.textContent;
+    try {
+      await navigator.clipboard.write([
+        new ClipboardItem({
+          'text/html': new Blob([html], { type: 'text/html' }),
+          'text/plain': new Blob([text], { type: 'text/plain' })
+        })
+      ]);
+      btn.textContent = 'Copied!';
+    } catch (err) {
+      btn.textContent = 'Copy failed';
+    }
+    setTimeout(function () { btn.textContent = original; }, 2000);
+  });
+</script>
+
+</body>
+</html>
