@@ -81,13 +81,19 @@
       border-color: #1F8D42;
       box-shadow: 0 0 0 3px rgba(31, 141, 66, 0.15);
     }
+    .page-wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 24px 20px;
+      box-sizing: border-box;
+    }
     .instructions-card {
       background: #ffffff;
       border: 1px solid #e4e7ec;
       border-radius: 10px;
       padding: 22px 26px;
-      margin: 24px auto;
-      max-width: 680px;
+      margin: 0;
+      box-sizing: border-box;
       box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.04);
       color: #1f2933;
     }
@@ -99,6 +105,35 @@
       border-bottom: 1px solid #eef0f3;
     }
     .instructions-section + .instructions-section { margin-top: 18px; }
+    .layout-row {
+      display: flex;
+      gap: 20px;
+      margin: 0 0 24px;
+      align-items: stretch;
+      box-sizing: border-box;
+    }
+    .layout-row .form-card,
+    .layout-row .signature-card {
+      margin: 0;
+      flex: 1;
+      max-width: none;
+    }
+    .signature-card {
+      background: #ffffff;
+      border: 1px solid #e4e7ec;
+      border-radius: 10px;
+      padding: 22px 26px;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .instructions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .instructions-grid .instructions-section { margin-top: 0; }
     .instructions-subtitle {
       font-size: 14px;
       font-weight: 600;
@@ -122,15 +157,23 @@
       background: #f5f7fa;
       border-radius: 6px;
     }
+    @media (max-width: 960px) {
+      .layout-row { flex-direction: column; }
+      .instructions-grid { grid-template-columns: 1fr; gap: 18px; }
+    }
     @media (max-width: 520px) {
+      .page-wrap { padding: 16px; }
       .form-grid { grid-template-columns: 1fr; }
-      .form-card { margin: 16px; padding: 18px 18px; }
-      .instructions-card { margin: 16px; padding: 18px 18px; }
+      .form-card { padding: 18px 18px; }
+      .signature-card { padding: 18px 18px; }
+      .instructions-card { padding: 18px 18px; }
     }
   </style>
 </head>
 <body style="margin: 0;">
 
+<div class="page-wrap">
+<div class="layout-row">
 <div class="form-card">
   <div class="form-header">
     <h1 class="form-title">הכן חתימה</h1>
@@ -156,8 +199,7 @@
   </div>
 </div>
 
-<div style="display: flex; justify-content: center; padding: 0 20px;">
-  <div style="border: 1px solid #d0d0d0; border-radius: 6px; padding: 24px 28px; background: #ffffff;">
+<div class="signature-card">
     <div id="signature">
 <table dir="rtl" cellpadding="0" cellspacing="0" border="0" style="font-family: Arial; font-size: 13px; color: #333333; border-collapse: collapse;">
   <tr>
@@ -221,6 +263,7 @@
 <div class="instructions-card">
   <h2 class="instructions-title">איך להגדיר את החתימה</h2>
 
+  <div class="instructions-grid">
   <div class="instructions-section">
     <h3 class="instructions-subtitle">Gmail (אינטרנט)</h3>
     <ol class="instructions-list">
@@ -229,6 +272,7 @@
       <li>בלשונית "כללי", גלול עד לאזור "חתימה".</li>
       <li>צור חתימה חדשה (או בחר חתימה קיימת לעריכה).</li>
       <li>הדבק לתוך תיבת החתימה (Ctrl+V / Cmd+V).</li>
+      <li>תחת "ברירות מחדל לחתימה", הגדר את החתימה רק עבור "להודעות חדשות בשימוש". בשדה "במצב מענה/העברה בשימוש" השאר "ללא חתימה".</li>
       <li>גלול לתחתית העמוד ולחץ "שמור שינויים".</li>
     </ol>
   </div>
@@ -237,10 +281,10 @@
     <h3 class="instructions-subtitle">Outlook (אינטרנט)</h3>
     <ol class="instructions-list">
       <li>לחץ על "העתק ללוח".</li>
-      <li>בתוך Outlook, פתח הגדרות (גלגל שיניים) → "הצג את כל הגדרות Outlook".</li>
-      <li>בחר דואר → כתוב והשב → חתימת דוא"ל.</li>
-      <li>צור חתימה חדשה והדבק בתוך עורך החתימה.</li>
-      <li>סמן את החתימה כברירת מחדל להודעות חדשות ולתשובות, ושמור.</li>
+      <li>בתוך Outlook, פתח הגדרות (גלגל שיניים) ← "הצג את כל הגדרות Outlook".</li>
+      <li>בחר דואר ← כתוב והשב ← חתימת דוא"ל.</li>
+      <li>צור חתימה חדשה והדבק לתוך עורך החתימה.</li>
+      <li>תחת "בחר חתימות ברירת מחדל", הגדר את החתימה רק עבור "להודעות חדשות". בשדה "להשבות/העברות" השאר "ללא חתימה". שמור.</li>
     </ol>
   </div>
 
@@ -248,13 +292,15 @@
     <h3 class="instructions-subtitle">Outlook (תוכנת שולחן עבודה ל-Windows)</h3>
     <ol class="instructions-list">
       <li>לחץ על "העתק ללוח".</li>
-      <li>ב-Outlook לך לקובץ → אפשרויות → דואר → חתימות.</li>
+      <li>ב-Outlook לך לקובץ ← אפשרויות ← דואר ← חתימות.</li>
       <li>לחץ "חדש", תן שם לחתימה והדבק לתוך עורך החתימה.</li>
-      <li>בחר את החתימה כברירת מחדל להודעות חדשות ולהשבות, ולחץ אישור.</li>
+      <li>תחת "בחר חתימת ברירת מחדל", בחר את החתימה רק בשדה "הודעות חדשות". בשדה "תשובות/העברה" השאר "ללא". לחץ אישור.</li>
     </ol>
+  </div>
   </div>
 
   <p class="instructions-note">טיפ: אם ההדבקה משטיחה את העיצוב, בדוק שאתה מדביק בעורך עשיר (Rich text / HTML) ולא במצב טקסט בלבד.</p>
+</div>
 </div>
 
 <script>
