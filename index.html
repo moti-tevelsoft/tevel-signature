@@ -208,10 +208,10 @@
 
 <div class="signature-card">
     <div id="signature">
-<table dir="rtl" cellpadding="0" cellspacing="0" border="0" style="font-family: Arial; font-size: 13px; color: #333333; border-collapse: collapse;">
+<table dir="rtl" cellpadding="0" cellspacing="0" border="0" style="font-family: Arial; font-size: 13px; color: #333333; border-collapse: collapse; max-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
   <tr>
     <td valign="top">
-      <table dir="rtl" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
+      <table dir="rtl" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
         <tr>
           <td colspan="2" style="padding-bottom: 2px; line-height: 1.2; mso-line-height-rule: exactly;">
             <span id="sig-name" style="font-family: Arial; font-size: 16px; font-weight: bold; color: #2b2b2b; line-height: 1.2; mso-line-height-rule: exactly;">שם מלא</span>
@@ -223,34 +223,34 @@
           </td>
         </tr>
         <tr id="sig-mobile-row">
-          <td valign="middle" style="padding: 2px 0 2px 8px; line-height: 1.4; mso-line-height-rule: exactly;">
+          <td valign="middle" style="padding: 0 0 0 8px; line-height: 1.2; mso-line-height-rule: exactly;">
             <span style="font-family: Arial; font-size: 14px; color: #1F8D42;">✆</span>
           </td>
-          <td valign="middle" style="padding: 2px 0; line-height: 1.4; mso-line-height-rule: exactly;">
+          <td valign="middle" style="padding: 0; line-height: 1.2; mso-line-height-rule: exactly;">
             <a id="sig-mobile" href="tel:0501234567" style="font-family: Arial; font-size: 12px; color: #333333; text-decoration: none;"><span id="sig-mobile-text" style="color: #333333; text-decoration: none;">050-1234567</span></a>
           </td>
         </tr>
         <tr>
-          <td valign="middle" style="padding: 2px 0 2px 8px; line-height: 1.4; mso-line-height-rule: exactly;">
+          <td valign="middle" style="padding: 0 0 0 8px; line-height: 1.2; mso-line-height-rule: exactly;">
             <span style="font-family: Arial; font-size: 14px; color: #1F8D42;">✆</span>
           </td>
-          <td valign="middle" style="padding: 2px 0; line-height: 1.4; mso-line-height-rule: exactly;">
+          <td valign="middle" style="padding: 0; line-height: 1.2; mso-line-height-rule: exactly;">
             <a href="tel:036773080" style="font-family: Arial; font-size: 12px; color: #333333; text-decoration: none;"><span style="color: #333333; text-decoration: none;">03-6773080</span></a>
           </td>
         </tr>
         <tr>
-          <td valign="middle" style="padding: 2px 0 2px 8px; line-height: 1.4; mso-line-height-rule: exactly;">
+          <td valign="middle" style="padding: 0 0 0 8px; line-height: 1.2; mso-line-height-rule: exactly;">
             <span style="font-family: Arial; font-size: 14px; color: #1F8D42; font-weight: bold;">@</span>
           </td>
-          <td valign="middle" style="padding: 2px 0; line-height: 1.4; mso-line-height-rule: exactly;">
+          <td valign="middle" style="padding: 0; line-height: 1.2; mso-line-height-rule: exactly;">
             <a id="sig-email" href="mailto:myemail@tevelsoft.co.il" style="font-family: Arial; font-size: 13px; color: #1F8D42; text-decoration: none;"><span id="sig-email-text" style="color: #1F8D42; text-decoration: none;">myemail@tevelsoft.co.il</span></a>
           </td>
         </tr>
         <tr>
-          <td valign="middle" style="padding: 2px 0 2px 8px; line-height: 1.4; mso-line-height-rule: exactly;">
+          <td valign="middle" style="padding: 0 0 0 8px; line-height: 1.2; mso-line-height-rule: exactly;">
             <span style="font-family: Arial; font-size: 14px; color: #1F8D42;">⌘</span>
           </td>
-          <td valign="middle" style="padding: 2px 0; line-height: 1.4; mso-line-height-rule: exactly;">
+          <td valign="middle" style="padding: 0; line-height: 1.2; mso-line-height-rule: exactly;">
             <a href="https://www.tevelsoft.co.il" style="font-family: Arial; font-size: 13px; color: #1F8D42; text-decoration: none;"><span style="color: #1F8D42; text-decoration: none;">www.tevelsoft.co.il</span></a>
           </td>
         </tr>
@@ -259,7 +259,7 @@
   </tr>
   <tr>
     <td valign="top" style="padding-top: 14px;">
-      <img alt="תבל" src="https://tevelsoft.co.il/wp-content/uploads/2026/06/tevel-mail-logo.png" width="120" height="44" style="display: block; border: 0;" />
+      <img alt="תבל" src="https://tevelsoft.co.il/wp-content/uploads/2026/06/tevel-mail-logo.png" width="120" height="44" style="display: block; border: 0; width: 120px; height: 44px; max-width: 120px;" />
     </td>
   </tr>
 </table>
@@ -309,7 +309,7 @@
   <p class="instructions-note">טיפ: אם ההדבקה משטיחה את העיצוב, בדוק שאתה מדביק בעורך עשיר (Rich text / HTML) ולא במצב טקסט בלבד.</p>
 </div>
 
-<p class="app-version">v1.0.0</p>
+<p class="app-version">v1.1.0</p>
 </div>
 
 <script>
@@ -321,26 +321,47 @@
   const sigEmail = document.getElementById('sig-email');
   const sigEmailText = document.getElementById('sig-email-text');
 
-  document.getElementById('field-name').addEventListener('input', function (e) {
-    sigName.textContent = e.target.value;
-  });
-  document.getElementById('field-position').addEventListener('input', function (e) {
-    sigPosition.textContent = e.target.value;
-  });
-  document.getElementById('field-mobile').addEventListener('input', function (e) {
-    const value = e.target.value.trim();
-    if (value === '') {
-      sigMobileRow.style.display = 'none';
-    } else {
-      sigMobileRow.style.display = '';
-      sigMobileText.textContent = value;
-      sigMobile.href = 'tel:' + value.replace(/\D/g, '');
+  const STORAGE_KEY = 'tevel-signature.fields';
+  const FIELD_IDS = ['field-name', 'field-position', 'field-mobile', 'field-email'];
+
+  const handlers = {
+    'field-name': function (value) { sigName.textContent = value; },
+    'field-position': function (value) { sigPosition.textContent = value; },
+    'field-mobile': function (value) {
+      const trimmed = value.trim();
+      if (trimmed === '') {
+        sigMobileRow.style.display = 'none';
+      } else {
+        sigMobileRow.style.display = '';
+        sigMobileText.textContent = trimmed;
+        sigMobile.href = 'tel:' + trimmed.replace(/\D/g, '');
+      }
+    },
+    'field-email': function (value) {
+      sigEmailText.textContent = value;
+      sigEmail.href = 'mailto:' + value;
     }
-  });
-  document.getElementById('field-email').addEventListener('input', function (e) {
-    const value = e.target.value;
-    sigEmailText.textContent = value;
-    sigEmail.href = 'mailto:' + value;
+  };
+
+  function persistFields() {
+    const data = {};
+    FIELD_IDS.forEach(function (id) { data[id] = document.getElementById(id).value; });
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) {}
+  }
+
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+  FIELD_IDS.forEach(function (id) {
+    const input = document.getElementById(id);
+    if (saved[id] !== undefined) {
+      input.value = saved[id];
+      handlers[id](input.value);
+    }
+    input.addEventListener('input', function (e) {
+      handlers[id](e.target.value);
+      persistFields();
+    });
   });
 
   document.getElementById('copy-signature-btn').addEventListener('click', async function () {
