@@ -2,7 +2,7 @@
 <html dir="rtl" lang="he">
 <head>
   <meta charset="utf-8" />
-  <title>Email Signature</title>
+  <title>מחולל חתימות - תבל</title>
   <style>
     body {
       background: #f5f7fa;
@@ -219,7 +219,7 @@
         </tr>
         <tr>
           <td colspan="2" style="padding-bottom: 10px; line-height: 1.2; mso-line-height-rule: exactly;">
-            <span style="font-family: Arial; font-size: 14px; font-weight: bold; color: #666666; line-height: 1.2; mso-line-height-rule: exactly;">תבל תעשיות תכנה בע"מ | <span id="sig-position">תפקיד</span></span>
+            <span style="font-family: Arial; font-size: 14px; font-weight: bold; color: #666666; line-height: 1.2; mso-line-height-rule: exactly;">תבל תעשיות תוכנה בע"מ | <span id="sig-position">תפקיד</span></span>
           </td>
         </tr>
         <tr id="sig-mobile-row">
@@ -376,9 +376,9 @@
           'text/plain': new Blob([text], { type: 'text/plain' })
         })
       ]);
-      btn.textContent = 'Copied!';
+      btn.textContent = 'הועתק!';
     } catch (err) {
-      btn.textContent = 'Copy failed';
+      btn.textContent = 'העתקה נכשלה';
     }
     setTimeout(function () { btn.textContent = original; }, 2000);
   });
