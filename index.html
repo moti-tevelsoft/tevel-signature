@@ -309,7 +309,7 @@
   <p class="instructions-note">טיפ: אם ההדבקה משטיחה את העיצוב, בדוק שאתה מדביק בעורך עשיר (Rich text / HTML) ולא במצב טקסט בלבד.</p>
 </div>
 
-<p class="app-version">v1.1.2</p>
+<p class="app-version">v1.1.3</p>
 </div>
 
 <script>
@@ -343,6 +343,12 @@
     }
   };
 
+  const sanitizers = {
+    'field-email': function (value) {
+      return value.toLowerCase();
+    }
+  };
+
   function persistFields() {
     const data = {};
     FIELD_IDS.forEach(function (id) { data[id] = document.getElementById(id).value; });
@@ -355,10 +361,21 @@
   FIELD_IDS.forEach(function (id) {
     const input = document.getElementById(id);
     if (saved[id] !== undefined) {
-      input.value = saved[id];
-      handlers[id](input.value);
+      const restored = sanitizers[id] ? sanitizers[id](saved[id]) : saved[id];
+      input.value = restored;
+      handlers[id](restored);
     }
     input.addEventListener('input', function (e) {
+      if (sanitizers[id]) {
+        const sanitized = sanitizers[id](e.target.value);
+        if (sanitized !== e.target.value) {
+          const pos = e.target.selectionStart;
+          const dropped = e.target.value.length - sanitized.length;
+          e.target.value = sanitized;
+          const newPos = Math.max(0, pos - dropped);
+          try { e.target.setSelectionRange(newPos, newPos); } catch (err) {}
+        }
+      }
       handlers[id](e.target.value);
       persistFields();
     });
